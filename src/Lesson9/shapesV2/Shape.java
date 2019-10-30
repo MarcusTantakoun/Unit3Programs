@@ -37,7 +37,7 @@ public abstract class Shape {
     }
     
     public String toString(){
-        String str = "XPos: " + xPos + " YPos: " + yPos;
+        String str = "\nXPos: " + xPos + " YPos: " + yPos;
         str += String.format("\nArea: %.2f\n", area());
         return str;
     }

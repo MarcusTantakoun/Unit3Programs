@@ -1,4 +1,7 @@
+
 package Lesson9.shapesV2;
+
+import TurtleGraphics.Pen;
 
 public class Triangle extends Shape {
 
@@ -14,7 +17,7 @@ public class Triangle extends Shape {
 
     @Override
     double area() {
-        return Math.abs((xPos * y2 - x2 * yPos) + (x1 * y3 - x3 * y1) + (x3 * yPos - xPos * y3)) / 2;
+        return Math.abs((xPos * y2 - x2 * yPos) + (x2 * y3 - x3 * y2) + (x3 * yPos - xPos * y3)) / 2;
     }
 
     @Override
@@ -29,22 +32,32 @@ public class Triangle extends Shape {
 
     @Override
     public void stretchBy(double factor) {
-       x2 = (x2-xPos) * factor + xPos;
-       x3 = (x3-xPos) * factor + xPos;
-       y2 = (y2-xPos) * factor + xPos;
-       y3 = (y3-xPos) * factor + xPos;
+        x2 = (x2 - xPos) * factor + xPos;
+        x3 = (x3 - xPos) * factor + xPos;
+        y2 = (y2 - yPos) * factor + yPos;
+        y3 = (y3 - yPos) * factor + yPos;
     }
 
     public String toString() {
         double length = x2 - xPos;
         String str = "Triangle\n======\n";
-        str += System.out.format("\nLengths: %.2f by %.2f by %.2f", length, length, length);
+        str += "\nLengths: " + length + " by " + length + " by " + length;
         str += super.toString();
         return str;
+    }
+    
+    public void move(final double xLoc, final double yLoc) {
+        xPos = xLoc;
+        yPos = yLoc;
+        x2 = x2 + xLoc;
+        x3 = x3 + xLoc;
+        y2 = y2 + yLoc;
+        y3 = y3 + yLoc;
     }
 
     @Override
     public double perimeter() {
         return Math.sqrt((xPos - x2) * (xPos - x2) + (yPos - y2) * (yPos - y2));
     }
+
 }
