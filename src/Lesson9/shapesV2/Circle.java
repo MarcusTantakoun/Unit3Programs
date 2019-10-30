@@ -51,5 +51,10 @@ public class Circle extends Shape{
         p.setColor(Color.green);
         draw(p);
     }
+
+    @Override
+    public double perimeter() {
+        return Math.PI*2*radius;
+    }
     
 }

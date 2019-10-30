@@ -15,6 +15,7 @@ public abstract class Shape {
     abstract double area();
     abstract void draw(Pen p);
     abstract void stretchBy(double factor);
+    abstract double perimeter();
 
     public double getXPos() {
         return xPos;
@@ -24,7 +25,7 @@ public abstract class Shape {
         return  yPos;
     }
 
-    public void move(double xLoc, double yLoc) {
+    public void move(final double xLoc, final double yLoc) {
         xPos = xLoc;
         yPos = yLoc;
     }

@@ -46,4 +46,9 @@ public class Rect extends Shape{
         str += super.toString();
         return str;
     }
+
+    @Override
+    public double perimeter() {
+        return width+width+height+height;
+    }
 }
