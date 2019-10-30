@@ -12,9 +12,9 @@ public class ShapeMaker extends javax.swing.JFrame {
     public ShapeMaker() {
         initComponents();
         SketchPadWindow w = new SketchPadWindow(400,400);
-        w.setLocation(50,275);
+        w.setLocation(50,400);
         p = new StandardPen(w);
-        s = new Circle(0,0,0);
+        s = new Rect(0,0,100,50);
     }
 
     @SuppressWarnings("unchecked")
@@ -30,14 +30,15 @@ public class ShapeMaker extends javax.swing.JFrame {
         movebtn = new javax.swing.JButton();
         resizebtn = new javax.swing.JButton();
         quitbtn = new javax.swing.JButton();
-        outputbox = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        outputbox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Select a Shape");
 
+        circlebtn.setBackground(new java.awt.Color(255, 51, 51));
         circlebtn.setText("CIRCLE");
         circlebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +46,7 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
+        wheelbtn.setBackground(new java.awt.Color(255, 51, 51));
         wheelbtn.setText("WHEEL");
         wheelbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +54,7 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
+        rectbtn.setBackground(new java.awt.Color(255, 51, 51));
         rectbtn.setText("RECTANGLE");
         rectbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +62,7 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
+        tribtn.setBackground(new java.awt.Color(255, 51, 51));
         tribtn.setText("TRIANGLE");
         tribtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,9 +70,10 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Options");
 
+        movebtn.setBackground(new java.awt.Color(255, 153, 51));
         movebtn.setText("MOVE");
         movebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +81,7 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
+        resizebtn.setBackground(new java.awt.Color(204, 153, 0));
         resizebtn.setText("RESIZE");
         resizebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +89,7 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
+        quitbtn.setBackground(new java.awt.Color(255, 153, 51));
         quitbtn.setText("QUIT");
         quitbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,14 +97,15 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Shape Data");
+
+        outputbox.setEditable(false);
         outputbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 outputboxActionPerformed(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel3.setText("Shape Data");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,116 +114,121 @@ public class ShapeMaker extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(345, 345, 345)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(circlebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(movebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(resizebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(quitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(86, 86, 86)
-                                .addComponent(jLabel2)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(wheelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(rectbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tribtn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rectbtn))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(outputbox, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3)
-                                .addGap(204, 204, 204)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel2)
+                                .addGap(145, 145, 145)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(circlebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(wheelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tribtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(jLabel3))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(quitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(movebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(resizebtn, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))))
+                        .addGap(26, 26, 26)
+                        .addComponent(outputbox, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(21, 21, 21)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(circlebtn)
-                    .addComponent(wheelbtn)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rectbtn)
+                    .addComponent(wheelbtn)
+                    .addComponent(circlebtn)
                     .addComponent(tribtn))
-                .addGap(48, 48, 48)
-                .addComponent(jLabel2)
-                .addGap(42, 42, 42)
-                .addComponent(movebtn)
-                .addGap(40, 40, 40)
-                .addComponent(resizebtn)
-                .addGap(41, 41, 41)
-                .addComponent(quitbtn)
-                .addContainerGap(77, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(outputbox, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(movebtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resizebtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(quitbtn))
+                    .addComponent(outputbox))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void circlebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_circlebtnActionPerformed
-        p.erase();
+        s.erase(p);
         s = new Circle(0,0,50);
         s.draw(p);
         outputbox.setText(s.toString());
     }//GEN-LAST:event_circlebtnActionPerformed
 
     private void wheelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wheelbtnActionPerformed
-        p.erase();
+        s.erase(p);
         s = new Wheel(0,0,50,6);
         s.draw(p);
         outputbox.setText(s.toString());
     }//GEN-LAST:event_wheelbtnActionPerformed
 
     private void rectbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rectbtnActionPerformed
-        p.erase();
+        s.erase(p);
         s = new Rect(0,0,100,50);
         s.draw(p);
         outputbox.setText(s.toString());
     }//GEN-LAST:event_rectbtnActionPerformed
 
     private void tribtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tribtnActionPerformed
-        p.erase();
-        s = new Triangle(0,0,50);
+        s.erase(p);    //x,y,x2,x3, y2, y3
+        s = new Triangle(0,0,50,100,100,0);
         s.draw(p);
         outputbox.setText(s.toString());
     }//GEN-LAST:event_tribtnActionPerformed
 
     private void resizebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resizebtnActionPerformed
-        
+        int x = Integer.parseInt(JOptionPane.showInputDialog(this,"Enter Factor"));
+        s.erase(p);
+        s.stretchBy(x);
+        s.draw(p);
     }//GEN-LAST:event_resizebtnActionPerformed
 
     private void quitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbtnActionPerformed
         System.exit(0);
     }//GEN-LAST:event_quitbtnActionPerformed
 
-    private void outputboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputboxActionPerformed
-        
-    }//GEN-LAST:event_outputboxActionPerformed
-
     private void movebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movebtnActionPerformed
         double x = Double.parseDouble(JOptionPane.showInputDialog(this,"Enter new X Location", "0"));
         double y = Double.parseDouble(JOptionPane.showInputDialog(this,"Enter new Y Location", "0"));
-        p.erase();
+        s.erase(p);
         s.move(x, y);
         s.draw(p);
         outputbox.setText(s.toString());
     }//GEN-LAST:event_movebtnActionPerformed
+
+    private void outputboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputboxActionPerformed
+        
+    }//GEN-LAST:event_outputboxActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
