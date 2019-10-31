@@ -42,9 +42,9 @@ public class Wheel extends Circle{
     public String toString(){
         String str = "Wheel\n======\n";
         str += "XPos: " + xPos + " YPos: " + yPos;
-        str += "\nRadius: " + radius;
+        str += "\nRadius: " + radius + "m";
         str += "\nSpokes: " + spokes;
-        str += String.format("\nArea: %.2f\n", area());
+        str += String.format("\nArea: %.2fm^2\n", area());
         return str;
     }
     

@@ -33,7 +33,6 @@ public class Rect extends Shape{
         p.move(height);
     }
 
-
     @Override
     public void stretchBy(double factor) {
         width = width * factor;
@@ -42,13 +41,15 @@ public class Rect extends Shape{
     
     public String toString(){
         String str = "Rectangle\n======\n";
-        str += "\nWidth: " + width + " Height: " + height;
+        str += "\nWidth: " + width + "m Height: " + height + "m";
         str += super.toString();
         return str;
     }
 
     @Override
     public double perimeter() {
-        return width+width+height+height;
+        double perim;
+        perim = width+width+height+height;
+        return perim;
     }
 }

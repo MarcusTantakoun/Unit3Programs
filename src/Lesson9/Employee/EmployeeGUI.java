@@ -1,5 +1,6 @@
-package Lesson9.shapesV2;
+package Lesson9.Employee;
 
+import Lesson9.shapesV2.*;
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
 
@@ -36,6 +37,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 153, 51));
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel1.setText("RATE:");
@@ -49,12 +51,6 @@ public class EmployeeGUI extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel4.setText("NAME:");
 
-        namebox.setEditable(false);
-
-        ratebox.setEditable(false);
-
-        hoursbox.setEditable(false);
-
         jLabel5.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         jLabel5.setText("Employee Type");
 
@@ -66,9 +62,16 @@ public class EmployeeGUI extends javax.swing.JFrame {
         });
 
         quitbtn.setText("QUIT");
+        quitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitbtnActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel6.setText("TOTAL PAY:");
+
+        totalpaybox.setEditable(false);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,6 +189,10 @@ public class EmployeeGUI extends javax.swing.JFrame {
         else temp = new PartTimeEmployee();
     }//GEN-LAST:event_addbtnActionPerformed
 
+    private void quitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbtnActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_quitbtnActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -209,6 +216,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(EmployeeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

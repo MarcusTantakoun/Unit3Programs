@@ -5,7 +5,7 @@ import TurtleGraphics.Pen;
 import java.awt.Color;
 
 public class Circle extends Shape{
-    
+
     protected double radius; //protected = only for parent and child classes
     
     public Circle(double x, double y, double r){
@@ -41,7 +41,7 @@ public class Circle extends Shape{
     
     public String toString(){
         String str = "Circle\n======\n";
-        str += "\nRadius: " + radius;
+        str += "\nRadius: " + radius + "m";
         str += super.toString();
         return str;
     }

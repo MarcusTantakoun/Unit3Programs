@@ -41,7 +41,7 @@ public class Triangle extends Shape {
     public String toString() {
         double length = x2 - xPos;
         String str = "Triangle\n======\n";
-        str += "\nLengths: " + length + " by " + length + " by " + length;
+        str += String.format("\nLengths: %.2fm by %.2fm by %.2fm", length, length, length);
         str += super.toString();
         return str;
     }

@@ -11,17 +11,23 @@ public abstract class Shape {
         xPos = x;
         yPos = y;
     }
+    
+    public Shape(){
+        xPos=0;
+        yPos=0;
+    }
     //like interface, child class MUST implement it
     abstract double area();
     abstract void draw(Pen p);
     abstract void stretchBy(double factor);
     abstract double perimeter();
-
-    public double getXPos() {
+    
+    //final methods can never be overwritten by child classes
+    final public double getXPos() {
         return xPos;
     }
 
-    public double getYPos() {
+    final public double getYPos() {
         return  yPos;
     }
 
@@ -38,7 +44,7 @@ public abstract class Shape {
     
     public String toString(){
         String str = "\nXPos: " + xPos + " YPos: " + yPos;
-        str += String.format("\nArea: %.2f\n", area());
+        str += String.format("\nArea: %.2fm^2\n", area());
         return str;
     }
 }
