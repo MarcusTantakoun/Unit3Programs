@@ -31,7 +31,8 @@ public class ShapeMaker extends javax.swing.JFrame {
         resizebtn = new javax.swing.JButton();
         quitbtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        outputbox = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        outputbox = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,11 +102,9 @@ public class ShapeMaker extends javax.swing.JFrame {
         jLabel3.setText("Shape Data");
 
         outputbox.setEditable(false);
-        outputbox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                outputboxActionPerformed(evt);
-            }
-        });
+        outputbox.setColumns(20);
+        outputbox.setRows(5);
+        jScrollPane1.setViewportView(outputbox);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,7 +132,7 @@ public class ShapeMaker extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(tribtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
+                                .addGap(62, 62, 62)
                                 .addComponent(jLabel3))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -146,7 +145,7 @@ public class ShapeMaker extends javax.swing.JFrame {
                                     .addComponent(movebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(resizebtn, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))))
                         .addGap(26, 26, 26)
-                        .addComponent(outputbox, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -164,15 +163,15 @@ public class ShapeMaker extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(movebtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(resizebtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(quitbtn))
-                    .addComponent(outputbox))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -226,10 +225,6 @@ public class ShapeMaker extends javax.swing.JFrame {
         outputbox.setText(s.toString());
     }//GEN-LAST:event_movebtnActionPerformed
 
-    private void outputboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputboxActionPerformed
-        
-    }//GEN-LAST:event_outputboxActionPerformed
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -266,8 +261,9 @@ public class ShapeMaker extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton movebtn;
-    private javax.swing.JTextField outputbox;
+    private javax.swing.JTextArea outputbox;
     private javax.swing.JButton quitbtn;
     private javax.swing.JButton rectbtn;
     private javax.swing.JButton resizebtn;
