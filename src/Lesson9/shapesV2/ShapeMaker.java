@@ -82,7 +82,7 @@ public class ShapeMaker extends javax.swing.JFrame {
             }
         });
 
-        resizebtn.setBackground(new java.awt.Color(204, 153, 0));
+        resizebtn.setBackground(new java.awt.Color(255, 153, 51));
         resizebtn.setText("RESIZE");
         resizebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
