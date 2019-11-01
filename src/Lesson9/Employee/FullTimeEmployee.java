@@ -9,8 +9,15 @@ public class FullTimeEmployee extends Employee{
     }
     
     public double getPay(){
+        //over 40 hours
         double pay;
-        pay = (hours-40)*(rate*2) + rate *40;
+        if(hours <= 40){
+            pay = rate * hours;
+        }
+        else{
+            pay = 40 * hours + (hours-40) * rate * 2;
+        }
+        totalpay += pay;
         return pay;
     }
 }

@@ -15,12 +15,10 @@ public class Triangle extends Shape {
         y3 = d;
     }
 
-    @Override
     double area() {
         return Math.abs((xPos * y2 - x2 * yPos) + (x2 * y3 - x3 * y2) + (x3 * yPos - xPos * y3)) / 2;
     }
 
-    @Override
     public void draw(Pen p) {
         p.up();
         p.move(xPos, yPos);
@@ -30,7 +28,6 @@ public class Triangle extends Shape {
         p.move(xPos, yPos);
     }
 
-    @Override
     public void stretchBy(double factor) {
         x2 = (x2 - xPos) * factor + xPos;
         x3 = (x3 - xPos) * factor + xPos;
@@ -55,7 +52,6 @@ public class Triangle extends Shape {
         y3 = y3 + yLoc;
     }
 
-    @Override
     public double perimeter() {
         return Math.sqrt((xPos - x2) * (xPos - x2) + (yPos - y2) * (yPos - y2));
     }

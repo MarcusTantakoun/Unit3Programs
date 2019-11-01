@@ -7,7 +7,7 @@ public abstract class Employee {
     protected String name;
     protected double rate;
     protected int hours;
-    protected double totalpay;
+    protected static double totalpay;
 
     public Employee() {
         name = "";
@@ -16,19 +16,19 @@ public abstract class Employee {
         totalpay = 0;
     }
 
-    public String getNameRules() {
+    public static String getNameRules() {
         return "non-blank";
     }
 
-    public String getRateRules() {
-        return "between 6.75 and 3.50, inclusive";
+    public static String getRateRules() {
+        return "between 6.75 and 30.50, inclusive";
     }
 
-    public String getHourRules() {
+    public static String getHourRules() {
         return "between 1 and 60, inclusive";
     }
 
-    public boolean setName(String nm) {
+    public final boolean setName(String nm) {
         boolean nameBlank = nm.equals("");
         if (nameBlank) {
             return false;
@@ -38,7 +38,7 @@ public abstract class Employee {
         }
     }
 
-    public boolean setRate(double rt) {
+    public final boolean setRate(double rt) {
         boolean rateOk = rt >= 6.75 && rt <= 30.50;
         if (rateOk) {
             rate = rt;
@@ -48,7 +48,7 @@ public abstract class Employee {
         }
     }
 
-    public boolean setHours(int h) {
+    public final boolean setHours(int h) {
         boolean hoursOk = h >= 1 && h <= 60;
         if (hoursOk) {
             hours = h;
@@ -56,13 +56,13 @@ public abstract class Employee {
         return hoursOk;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
     abstract double getPay();
     
-    public double getTotalPay(){
+    public static double getTotalPay(){
         return totalpay;
     }
 

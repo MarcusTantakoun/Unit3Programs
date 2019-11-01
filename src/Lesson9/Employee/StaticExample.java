@@ -20,6 +20,8 @@ public class StaticExample {
         System.out.println(b1.identify());
         System.out.println(b2.identify());
         System.out.println(b3.identify());
+        
+        //public final methods cannot be overritten by a child class
     }
     
 }

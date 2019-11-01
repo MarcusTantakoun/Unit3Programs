@@ -13,12 +13,10 @@ public class Rect extends Shape{
         height = h;
     }
 
-    @Override
     public double area() {
         return width * height;
     }
 
-    @Override
     public void draw(Pen p) {
         p.up(); //lift pen up
         p.move(xPos,yPos); //move pen to coordinate
@@ -33,7 +31,6 @@ public class Rect extends Shape{
         p.move(height);
     }
 
-    @Override
     public void stretchBy(double factor) {
         width = width * factor;
         height = height * factor;
@@ -46,10 +43,7 @@ public class Rect extends Shape{
         return str;
     }
 
-    @Override
     public double perimeter() {
-        double perim;
-        perim = width+width+height+height;
-        return perim;
+        return width+width+height+height;
     }
 }
