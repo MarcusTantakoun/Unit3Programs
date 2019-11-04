@@ -55,9 +55,21 @@ public class EmployeeGUI extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel4.setText("NAME:");
 
+        namebox.setBackground(new java.awt.Color(0, 0, 0));
+        namebox.setForeground(new java.awt.Color(255, 255, 255));
+
+        ratebox.setBackground(new java.awt.Color(0, 0, 0));
+        ratebox.setForeground(new java.awt.Color(255, 255, 255));
+
+        hoursbox.setBackground(new java.awt.Color(0, 0, 0));
+        hoursbox.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel5.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         jLabel5.setText("Employee Type");
 
+        addbtn.setBackground(new java.awt.Color(51, 51, 51));
+        addbtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        addbtn.setForeground(new java.awt.Color(255, 255, 255));
         addbtn.setText("ADD");
         addbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +77,9 @@ public class EmployeeGUI extends javax.swing.JFrame {
             }
         });
 
+        quitbtn.setBackground(new java.awt.Color(51, 51, 51));
+        quitbtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        quitbtn.setForeground(new java.awt.Color(255, 255, 255));
         quitbtn.setText("QUIT");
         quitbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,12 +91,18 @@ public class EmployeeGUI extends javax.swing.JFrame {
         jLabel6.setText("TOTAL PAY:");
 
         totalpaybox.setEditable(false);
+        totalpaybox.setBackground(new java.awt.Color(0, 0, 0));
+        totalpaybox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        totalpaybox.setForeground(new java.awt.Color(255, 255, 255));
         totalpaybox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 totalpayboxActionPerformed(evt);
             }
         });
 
+        tblemp.setBackground(new java.awt.Color(0, 0, 0));
+        tblemp.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        tblemp.setForeground(new java.awt.Color(255, 255, 255));
         tblemp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -103,13 +124,19 @@ public class EmployeeGUI extends javax.swing.JFrame {
         tblemp.setEnabled(false);
         jScrollPane1.setViewportView(tblemp);
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
+        FTradiobtn.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(FTradiobtn);
+        FTradiobtn.setForeground(new java.awt.Color(255, 255, 255));
         FTradiobtn.setText("Full Time");
         FTradiobtn.setActionCommand("FT");
 
+        PTradiobtn.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(PTradiobtn);
+        PTradiobtn.setForeground(new java.awt.Color(255, 255, 255));
         PTradiobtn.setText("Part Time");
         PTradiobtn.setActionCommand("PT");
 
@@ -202,8 +229,9 @@ public class EmployeeGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
                         .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(quitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
