@@ -32,8 +32,12 @@ public class Craps {
     
     public boolean hasWon(){
         boolean win = false;
-        if(rollnum==1)if(getTotal()==7 || getTotal()==11) win = true;       
-        else if(rollnum>1) if(getTotal()==point) win = true;
+        if(rollnum==1){
+            if(getTotal()==7 || getTotal()==11) win = true;       
+        }
+        else if(rollnum>1){
+            if(getTotal()== point) win = true;
+        }
         return win;
     }
     

@@ -302,7 +302,7 @@ public class StudentBrowser extends javax.swing.JFrame {
         String em = temp.validateData();
         if(em==null){
             s[size]=temp;
-            index=size-1;
+            index=size;
             size++;
             showStudent();
         }
